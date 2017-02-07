@@ -1,0 +1,54 @@
+group 'com.opsbears'
+version '1.0-SNAPSHOT'
+def mainClass = 'com.opsbears.webcomponents.application.Application'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile group: 'com.github.opsbears', name: 'owc-form', version:'master-SNAPSHOT', changing: true
+    compile group: 'com.github.opsbears', name: 'owc-net', version:'master-SNAPSHOT', changing: true
+    compile group: 'com.github.opsbears', name: 'owc-dic', version:'master-SNAPSHOT', changing: true
+    compile group: 'com.github.opsbears', name: 'owc-validator', version:'master-SNAPSHOT', changing: true
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
+    compile group: 'org.apache.logging.log4j', name: 'log4j', version: '2.8'
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.0.v20161208'
+    compile group: 'org.jtwig', name: 'jtwig-core', version: '5.65'
+    compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-parameters'
+}
+
+task runnableJar(type: Jar) {
+    baseName = project.name + '-all'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes(
+                'Main-Class': mainClass
+        )
+    }
+    with jar
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': mainClass
+        )
+    }
+}
