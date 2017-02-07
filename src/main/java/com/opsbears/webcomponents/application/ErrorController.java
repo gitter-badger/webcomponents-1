@@ -12,17 +12,19 @@ public class ErrorController {
         this.debug = debug;
     }
 
-    public String onNotFound() {
-        throw new RuntimeException("test");
+    public Map<String, Object> onNotFound() {
+        return new HashMap<>();
     }
 
-    public String onMethodNotAllowed() {
-        return "<h1>Method not allowed</h1>";
+    public Map<String, Object> onMethodNotAllowed() {
+        return new HashMap<>();
     }
 
     public Map<String, Object> onInternalServerError(Exception e) {
         Map<String,Object> viewModel = new HashMap<>();
         viewModel.put("exception", e);
+
+        viewModel.put("debug", debug);
 
         StringWriter writer = new StringWriter();
         PrintWriter pw = new PrintWriter(writer);
