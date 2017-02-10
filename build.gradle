@@ -17,6 +17,7 @@ dependencies {
     compile group: 'com.github.opsbears', name: 'owc-net', version:'master-SNAPSHOT', changing: true
     compile group: 'com.github.opsbears', name: 'owc-dic', version:'master-SNAPSHOT', changing: true
     compile group: 'com.github.opsbears', name: 'owc-validator', version:'master-SNAPSHOT', changing: true
+    compile group: 'com.github.opsbears', name: 'owc-routing', version:'master-SNAPSHOT', changing: true
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
     compile group: 'org.apache.logging.log4j', name: 'log4j', version: '2.8'
     compile group: 'org.eclipse.jetty', name: 'jetty-server', version: '9.4.1.v20170120'

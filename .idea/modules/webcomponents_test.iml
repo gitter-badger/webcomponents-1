@@ -14,6 +14,7 @@
     <orderEntry type="library" name="Gradle: com.github.opsbears:owc-net:master-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: com.github.opsbears:owc-dic:master-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: com.github.opsbears:owc-validator:master-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.opsbears:owc-routing:master-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-simple:1.7.22" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.4.1.v20170120" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.http2:http2-server:9.4.1.v20170120" level="project" />
