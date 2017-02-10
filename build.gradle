@@ -1,8 +1,11 @@
 group 'com.opsbears'
 version '1.0-SNAPSHOT'
-def mainClass = 'com.opsbears.webcomponents.application.Application'
 
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.opsbears.webcomponents.application.Application'
+applicationDefaultJvmArgs = ["-Xbootclasspath/p:build/libs/alpn-api-1.1.3.v20160715.jar"]
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -49,7 +52,7 @@ task runnableJar(type: Jar) {
     }
     manifest {
         attributes(
-                'Main-Class': mainClass
+                'Main-Class': mainClassName
         )
     }
     with jar
@@ -58,7 +61,7 @@ task runnableJar(type: Jar) {
 jar {
     manifest {
         attributes(
-            'Main-Class': mainClass
+            'Main-Class': mainClassName
         )
     }
 }
