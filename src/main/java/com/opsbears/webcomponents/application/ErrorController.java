@@ -1,15 +1,17 @@
 package com.opsbears.webcomponents.application;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
+@ParametersAreNonnullByDefault
 public class ErrorController {
-    private boolean debug;
+    private boolean development;
 
-    public ErrorController(boolean debug) {
-        this.debug = debug;
+    public ErrorController(boolean development) {
+        this.development = development;
     }
 
     public Map<String, Object> onNotFound() {
@@ -24,7 +26,7 @@ public class ErrorController {
         Map<String,Object> viewModel = new HashMap<>();
         viewModel.put("exception", e);
 
-        viewModel.put("debug", debug);
+        viewModel.put("debug", development);
 
         StringWriter writer = new StringWriter();
         PrintWriter pw = new PrintWriter(writer);

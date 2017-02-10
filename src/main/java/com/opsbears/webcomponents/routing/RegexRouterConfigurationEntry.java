@@ -1,10 +1,12 @@
 package com.opsbears.webcomponents.routing;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@ParametersAreNonnullByDefault
 public class RegexRouterConfigurationEntry {
     private String  method;
     private Pattern pattern;
